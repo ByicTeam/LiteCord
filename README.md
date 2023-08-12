@@ -1,6 +1,5 @@
 
 <div align="center">
-<img src="https://armcord.app/logo.png" width="520">
  <br>LiteCord is a client makes your Discord experience better without using a lot of resources.
 </div>
 

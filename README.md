@@ -2,7 +2,8 @@
 <div align="center">
  <br>LiteCord is a client makes your Discord experience better without using a lot of resources.
 </div>
-[![Release build](https://github.com/ByicTeam/LiteCord/actions/workflows/stable.yml/badge.svg)](https://github.com/ByicTeam/LiteCord/actions/workflows/stable.yml)
+<img title="Status of builds alt="Builds" src="https://github.com/ByicTeam/LiteCord/actions/workflows/stable.yml/badge.svg">
+
 # Features
 
 - **Standalone client** 

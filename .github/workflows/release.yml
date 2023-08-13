@@ -148,19 +148,19 @@ jobs:
         needs: [build-linux, build-mac, build-windows, build-windowsOnARM]
 
         steps:
-            - uses: actions/download-artifact@v2
+            - uses: actions/download-artifact@v3
               with:
                   name: LiteCordMac
                   path: macos
-            - uses: actions/download-artifact@v2
+            - uses: actions/download-artifact@v3
               with:
                   name: LiteCordWindows
                   path: windows
-            - uses: actions/download-artifact@v2
+            - uses: actions/download-artifact@v3
               with:
                   name: LiteCordWindowsArm64
                   path: windows
-            - uses: actions/download-artifact@v2
+            - uses: actions/download-artifact@v3
               with:
                   name: LiteCordLinux
                   path: linux

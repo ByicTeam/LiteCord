@@ -26,6 +26,7 @@ import os from "os";
 import {tray} from "./tray";
 import {iconPath} from "./main";
 import {createSetupWindow} from "./setup/main";
+import { disableGPU } from "./disableGPU";
 export let mainWindow: BrowserWindow;
 export let inviteWindow: BrowserWindow;
 let forceQuit = false;
@@ -55,6 +56,7 @@ contextMenu({
     ]
 });
 async function doAfterDefiningTheWindow(): Promise<void> {
+    disableGPU();
     if ((await getWindowState("isMaximized")) ?? false) {
         mainWindow.setSize(835, 600); //just so the whole thing doesn't cover whole screen
         mainWindow.maximize();
@@ -70,6 +72,7 @@ async function doAfterDefiningTheWindow(): Promise<void> {
     let ignoreProtocolWarning = await getConfig("ignoreProtocolWarning");
     await checkIfConfigIsBroken();
     registerIpc();
+    disableGPU()
     if (await getConfig("mobileMode")) {
         mainWindow.webContents.userAgent =
             "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.149 Mobile Safari/537.36";
@@ -141,6 +144,7 @@ async function doAfterDefiningTheWindow(): Promise<void> {
         import("./screenshare/main");
     }
 
+    // Anti-Tracker
     mainWindow.webContents.session.webRequest.onBeforeRequest(
         {urls: ["https://*/api/v*/science", "https://sentry.io/*", "https://*.nel.cloudflare.com/*"]},
         (_, callback) => callback({cancel: true})
@@ -181,11 +185,11 @@ async function doAfterDefiningTheWindow(): Promise<void> {
         });
 
         mainWindow.webContents.on("page-title-updated", async (e, title) => {
-            const armCordSuffix = " - LiteCord"; /* identify */
-            if (!title.endsWith(armCordSuffix)) {
+            const LiteSuffix = " - LiteCord"; /* identify */
+            if (!title.endsWith(LiteSuffix)) {
                 e.preventDefault();
                 await mainWindow.webContents.executeJavaScript(
-                    `document.title = '${(title.split(" | ")[1] ?? title) + armCordSuffix}'`
+                    `document.title = '${(title.split(" | ")[1] ?? title) + LiteSuffix}'`
                 );
             }
         });
@@ -276,18 +280,32 @@ async function doAfterDefiningTheWindow(): Promise<void> {
     if (firstRun) {
         mainWindow.close();
     }
-    mainWindow.loadURL("data:text/html,%3Ch1%3ELoading%21%3C%2Fh1%3E");
+    mainWindow.loadURL("data:text/html,<h2> Loading </h2><script>console.warn('LiteCord Injecting')</script>");
     mainWindow.webContents.executeJavaScript(`
-            switch (window.armcord.channel) {
+            switch (window.litecord.channel) {
                 case "stable":
                     window.location.replace("https://discord.com/app");
                     break;
                 case "canary":
+                    if(!localStorage.getItem("swi")) {
+                    alert("May Take Longer If switched from stable or ptb to this");
+                    localStorage.setItem("swi", "true");
                     window.location.replace("https://canary.discord.com/app");
                     break;
+                } else {
+                            window.location.replace("https://ptb.discord.com/app");
+                            break;
+                    }
                 case "ptb":
+            if(!localStorage.getItem("swi")) {
+                localStorage.setItem("swi", "true");
+            alert("May Take Longer If switched from stable or canary to this");
+            window.location.replace("https://ptb.discord.com/app");
+            break;
+             } else {
                     window.location.replace("https://ptb.discord.com/app");
                     break;
+            }
                 case undefined:
                     window.location.replace("https://discord.com/app");
                     break;
@@ -295,6 +313,7 @@ async function doAfterDefiningTheWindow(): Promise<void> {
                     window.location.replace("https://discord.com/app");
             }
             `);
+
     if (await getConfig("skipSplash")) {
         mainWindow.show();
     }

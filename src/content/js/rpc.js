@@ -4,7 +4,7 @@
         lookupApp,
         apps = {};
 
-    ArmCordRPC.listen(async (data) => {
+        liteRPC.listen(async (data) => {
         msg = data; //already parsed
         //console.log(msg);
 

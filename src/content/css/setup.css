@@ -111,22 +111,22 @@ div {
     width: 292px;
 }
 
-[armcord-platform="win32"] .titlebar #window-controls-container #maximize,
-[armcord-platform="linux"] .titlebar #window-controls-container #maximize {
+[litecord-platform="win32"] .titlebar #window-controls-container #maximize,
+[litecord-platform="linux"] .titlebar #window-controls-container #maximize {
     display: none;
 }
 
-[armcord-platform="win32"] .titlebar #window-controls-container #spacer,
-[armcord-platform="linux"] .titlebar #window-controls-container #spacer {
+[litecord-platform="win32"] .titlebar #window-controls-container #spacer,
+[litecord-platform="linux"] .titlebar #window-controls-container #spacer {
     float: left;
     height: 100%;
     width: 33%;
 }
-[armcord-platform="darwin"] .titlebar #window-controls-container #quit {
+[litecord-platform="darwin"] .titlebar #window-controls-container #quit {
     width: 18% !important;
 }
-[armcord-platform="darwin"] .titlebar #window-controls-container #maximize,
-[armcord-platform="darwin"] .titlebar #window-controls-container #maximize #maximize-icon {
+[litecord-platform="darwin"] .titlebar #window-controls-container #maximize,
+[litecord-platform="darwin"] .titlebar #window-controls-container #maximize #maximize-icon {
     background-color: #d6d6d5 !important;
     pointer-events: none;
 }

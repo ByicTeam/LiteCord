@@ -19,7 +19,7 @@ interface ThemeManifest {
     website?: string;
     source?: string;
     updateSrc?: string;
-    supportsArmCordTitlebar?: boolean;
+    supportsLiteCordTitlebar?: boolean;
 }
 function parseBDManifest(content: string) {
     const metaReg = /@([^ ]*) (.*)/g;
@@ -176,8 +176,8 @@ export function createTManagerWindow(): void {
                     console.log(`Created ${manifest.name} folder`);
                 }
                 manifest.updateSrc = link;
-                if (code.includes(".titlebar")) manifest.supportsArmCordTitlebar = true;
-                else manifest.supportsArmCordTitlebar = false;
+                if (code.includes(".titlebar")) manifest.supportsLiteCordTitlebar = true;
+                else manifest.supportsLiteCordTitlebar = false;
                 fs.writeFileSync(path.join(themePath, "manifest.json"), JSON.stringify(manifest));
                 fs.writeFileSync(path.join(themePath, "src.css"), code);
                 dialog.showMessageBoxSync({

@@ -26,7 +26,7 @@ export function injectTitlebar(): void {
         addStyle(fs.readFileSync(titlebarcssPath, "utf8"));
         addStyle(fs.readFileSync(wordmarkcssPath, "utf8"));
         document.body.setAttribute("customTitlebar", "");
-        document.body.setAttribute("armcord-platform", os.platform());
+        document.body.setAttribute("litecord-platform", os.platform());
 
         const minimize = document.getElementById("minimize");
         const maximize = document.getElementById("maximize");

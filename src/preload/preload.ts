@@ -25,7 +25,7 @@ async function updateLang(): Promise<void> {
 }
 declare global {
     interface Window {
-        armcord: any;
+        litecord: any;
     }
 }
 
@@ -49,7 +49,7 @@ sleep(5000).then(async () => {
             set(onClick) {
             originalSetter.call(this, function() {
                 onClick.apply(this, arguments);
-                armcord.window.show();
+                litecord.window.show();
             })
             },
             configurable: true

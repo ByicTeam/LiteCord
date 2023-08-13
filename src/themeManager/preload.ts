@@ -27,14 +27,14 @@ ipcRenderer.on("themeManifest", (_event, json) => {
         document.getElementById("themeInfoModal")!.style.display = "block";
         document.getElementById("themeInfoName")!.textContent = `${manifest.name} by ${manifest.author}`;
         document.getElementById("themeInfoDesc")!.textContent = `${manifest.description}\n\n${manifest.version}`;
-        if (manifest.supportsArmCordTitlebar !== undefined) {
+        if (manifest.supportsLiteCordTitlebar !== undefined) {
             document.getElementById(
                 "themeInfoButtons"
             )!.innerHTML += `<img class="themeInfoIcon" id="removeTheme" onclick="themes.uninstall('${id}')" title="Remove the theme" src="https://raw.githubusercontent.com/ArmCord/BrandingStuff/main/Trash.png"></img>
                            <img class="themeInfoIcon" id="updateTheme" onclick="themes.install('${manifest.updateSrc}')" title="Update your theme" src="https://raw.githubusercontent.com/ArmCord/BrandingStuff/main/UpgradeArrow.png"></img>
                            <img class="themeInfoIcon" id="compatibility" title="Supports LiteCord Titlebar" src=""></img>`;
             console.log("e");
-            if (manifest.supportsArmCordTitlebar == true) {
+            if (manifest.supportsLiteCordTitlebar == true) {
                 (document.getElementById(`compatibility`) as HTMLImageElement).src =
                     "https://raw.githubusercontent.com/ArmCord/BrandingStuff/main/Window.png";
             } else {

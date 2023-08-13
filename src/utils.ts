@@ -57,6 +57,7 @@ export function setup(): void {
         customJsBundle: "https://armcord.app/placeholder.js",
         customCssBundle: "https://armcord.app/placeholder.css",
         disableAutogain: false,
+        disableGPU: "auto",
         useLegacyCapturer: false,
         mobileMode: false,
         trayIcon: "default",
@@ -246,6 +247,7 @@ export interface Settings {
     noBundleUpdates?: boolean;
     // Only used for external url warning dialog.
     ignoreProtocolWarning?: boolean;
+    disableGPU: string;
     customIcon: string;
     windowStyle: string;
     channel: string;

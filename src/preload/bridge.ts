@@ -16,8 +16,9 @@ async function getDisplayMediaSelector(): Promise<string> {
     return `<div class="desktop-capturer-selection__scroller">
   <ul class="desktop-capturer-selection__list">
     ${sources
+        .filter(source => source.name !== "NVIDIA GeForce Overlay" && source.name !== "NVIDIA GeForce Overlay DT" && !source.name.toLowerCase().includes("overlay"))
         .map(
-            ({id, name, thumbnail}) => `
+            ({id, name, thumbnail}) =>`
       <li class="desktop-capturer-selection__item">
         <button class="desktop-capturer-selection__btn" data-id="${id}" title="${name}">
           <img class="desktop-capturer-selection__thumbnail" src="${thumbnail.toDataURL()}" />
@@ -35,7 +36,7 @@ async function getDisplayMediaSelector(): Promise<string> {
   </ul>
 </div>`;
 }
-contextBridge.exposeInMainWorld("armcord", {
+contextBridge.exposeInMainWorld("litecord", {
     window: {
         show: () => ipcRenderer.send("win-show"),
         hide: () => ipcRenderer.send("win-hide"),
@@ -61,7 +62,7 @@ contextBridge.exposeInMainWorld("armcord", {
     openSettingsWindow: () => ipcRenderer.send("openSettingsWindow")
 });
 let windowCallback: (arg0: object) => void;
-contextBridge.exposeInMainWorld("ArmCordRPC", {
+contextBridge.exposeInMainWorld("liteRPC", {
     listen: (callback: any) => {
         windowCallback = callback;
     }

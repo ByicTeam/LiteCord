@@ -43,6 +43,10 @@ export function registerIpc(): void {
     ipcMain.on("open-external-link", (_event, href: string) => {
         shell.openExternal(href);
     });
+    ipcMain.on("Disable-GPU", (_event) => {
+        app.disableHardwareAcceleration();
+        console.log("OOOOOOOOOO MG")
+    });
     ipcMain.on("setPing", (_event, pingCount: number) => {
         switch (os.platform()) {
             case "linux" ?? "macos":

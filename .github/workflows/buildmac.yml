@@ -1,0 +1,14 @@
+name: MacOS Workflow
+on: [push]
+
+jobs:
+  build:
+    name: release-macos
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Build
+        run: npm run CIbuild

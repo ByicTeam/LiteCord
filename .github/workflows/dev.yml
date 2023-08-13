@@ -182,26 +182,26 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: LiteCordMac.zip
           path: macos
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: LiteCordWindows.zip
           path: windows
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: LiteCordLinux.zip
           path: linux
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: LiteCordLinuxArm64.zip
           path: linux
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: LiteCordWindowsArm64.zip
           path: windows

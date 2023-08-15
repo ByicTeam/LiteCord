@@ -18,7 +18,7 @@
     <body>
         <div class="container">
             <video autoplay loop class="logo" id="splashscreen-litecord">
-                <source src="https://armcord.app/discord_loading.webm" type="video/webm" />
+                <source src="https://litecord-azure.vercel.app/discord_loading.webm" type="video/webm" />
             </video>
             <p id="text-splashscreen">LiteCord :D</p>
         </div>
@@ -38,7 +38,7 @@
                     if (data.version !== window.internal.version) {
                         var elem = document.createElement("img");
                         elem.classList.add("logo");
-                        elem.src = "https://armcord.app/update.webp";
+                        elem.src = "https://litecord-azure.vercel.app/update.webp";
                         document.body.prepend(elem);
                         document.getElementById("splashscreen-litecord").remove();
                         text.innerHTML = await internal.getLang("loading_screen_update");

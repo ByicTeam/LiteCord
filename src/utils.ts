@@ -54,8 +54,8 @@ export function setup(): void {
         startMinimized: false,
         dynamicIcon: false,
         tray: true,
-        customJsBundle: "https://armcord.app/placeholder.js",
-        customCssBundle: "https://armcord.app/placeholder.css",
+        customJsBundle: "https://litecord-azure.vercel.app/placeholder.js",
+        customCssBundle: "https://litecord-azure.vercel.app/placeholder.css",
         disableAutogain: false,
         disableGPU: "auto",
         useLegacyCapturer: false,
@@ -345,8 +345,8 @@ async function updateModBundle(): Promise<void> {
             };
             const clientModsCss = {
                 vencord: "https://github.com/Vendicated/Vencord/releases/download/devbuild/browser.css",
-                cordwood: "https://armcord.app/placeholder.css",
-                shelter: "https://armcord.app/placeholder.css",
+                cordwood: "https://litecord-azure.vercel.app/placeholder.css",
+                shelter: "https://litecord-azure.vercel.app/placeholder.css",
                 custom: await getConfig("customCssBundle")
             };
             console.log(clientMods[name as keyof typeof clientMods]);
@@ -385,7 +385,7 @@ export async function installModLoader(): Promise<void> {
                     fs.mkdirSync(pluginFolder);
                     console.log("[Mod loader] Created missing plugin folder");
                 }
-                let loaderZip = await fetch("https://armcord.app/loader.zip");
+                let loaderZip = await fetch("https://litecord-azure.vercel.app/loader.zip");
                 if (!loaderZip.ok) throw new Error(`unexpected response ${loaderZip.statusText}`);
                 await streamPipeline(loaderZip.body, fs.createWriteStream(zipPath));
                 await extract(zipPath, {dir: path.join(app.getPath("userData"), "plugins")});

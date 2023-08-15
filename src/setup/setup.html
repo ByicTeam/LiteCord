@@ -69,15 +69,15 @@
         </div>
         <script>
             async function loadLang() {
-                document.getElementById("next").innerHTML = await armcordinternal.getLang("next");
-                document.getElementById("setup_offline").innerHTML = await armcordinternal.getLang("setup_offline");
-                document.getElementById("setup_question1").innerHTML = await armcordinternal.getLang("setup_question1");
-                document.getElementById("express").innerHTML = await armcordinternal.getLang("setup_question1_answer1");
-                document.getElementById("full").innerHTML = await armcordinternal.getLang("setup_question1_answer2");
-                document.getElementById("setup_question2").innerHTML = await armcordinternal.getLang("setup_question2");
-                document.getElementById("setup_question3").innerHTML = await armcordinternal.getLang("setup_question3");
-                document.getElementById("setup_question4").innerHTML = await armcordinternal.getLang("setup_question4");
-                document.getElementById("setup_question5").innerHTML = await armcordinternal.getLang("setup_question5");
+                document.getElementById("next").innerHTML = await liteinternal.getLang("next");
+                document.getElementById("setup_offline").innerHTML = await liteinternal.getLang("setup_offline");
+                document.getElementById("setup_question1").innerHTML = await liteinternal.getLang("setup_question1");
+                document.getElementById("express").innerHTML = await liteinternal.getLang("setup_question1_answer1");
+                document.getElementById("full").innerHTML = await liteinternal.getLang("setup_question1_answer2");
+                document.getElementById("setup_question2").innerHTML = await liteinternal.getLang("setup_question2");
+                document.getElementById("setup_question3").innerHTML = await liteinternal.getLang("setup_question3");
+                document.getElementById("setup_question4").innerHTML = await liteinternal.getLang("setup_question4");
+                document.getElementById("setup_question5").innerHTML = await liteinternal.getLang("setup_question5");
             }
             loadLang();
         </script>
@@ -121,14 +121,14 @@
                     page3.classList.add("hidden");
                     page4.classList.remove("hidden");
                 });
-                if (window.armcordinternal.getOS == "linux") {
+                if (window.liteinternal.getOS == "linux") {
                     document.getElementById("tray").value = "false";
                     document.getElementById(
                         "linuxNotice"
                     ).innerHTML = `Linux may not work well with tray icons. Depending on your system configuration, you may not be able to see the tray icon. Enable at your own risk. Can be changed later.`;
                 }
                 document.getElementById("next-page4").addEventListener("click", () => {
-                    window.armcordinternal.saveSettings({
+                    window.liteinternal.saveSettings({
                         windowStyle: "default",
                         channel: options.channel,
                         LiteCordCSP: true,
@@ -149,7 +149,7 @@
                         inviteWebsocket: true,
                         doneSetup: true
                     });
-                    setTimeout(() => window.armcordinternal.restart(), 500);
+                    setTimeout(() => window.liteinternal.restart(), 500);
                 });
             });
             document.body.setAttribute("insetup", "");

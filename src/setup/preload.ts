@@ -1,7 +1,7 @@
 import {contextBridge, ipcRenderer} from "electron";
 import {injectTitlebar} from "../preload/titlebar";
 injectTitlebar();
-contextBridge.exposeInMainWorld("armcordinternal", {
+contextBridge.exposeInMainWorld("liteinternal", {
     restart: () => ipcRenderer.send("restart"),
     getOS: ipcRenderer.sendSync("setup-getOS"),
     saveSettings: (...args: any) => ipcRenderer.send("saveSettings", ...args),

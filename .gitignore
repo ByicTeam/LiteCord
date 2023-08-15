@@ -1,6 +1,12 @@
-node_modules
+# Default ignored files
+/README.md
+/.github
+/.hooks
+/.idea
+/build/
+/releases/
+node_modules/
 out/
-dist
+dist/
 ts-out/
-ts-out
 package-lock.json

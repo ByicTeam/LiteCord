@@ -1,8 +1,6 @@
 # Default ignored files
 /README.md
 /.github
-/.hooks
-/.idea
 /build/
 /releases/
 node_modules/

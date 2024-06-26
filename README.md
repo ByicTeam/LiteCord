@@ -44,7 +44,7 @@
 [![Packaging status](https://repology.org/badge/vertical-allrepos/litecord.svg)](https://repology.org/project/litecord/versions)
 
 ### Windows
-[pre-built installers]([https:///download](https://github.com/ByicTeam/LiteCord/releases)).
+[pre-built installers](https://github.com/ByicTeam/LiteCord/releases/).
 
 
 ### Compiling:
@@ -57,7 +57,7 @@
 
 # FAQ
 ## Will I get banned for using this?   
-- You are breaking [Discord ToS](https://discord.com/terms#software-in-discord%E2%80%99s-services) by using ArmCord, but no one has been banned from using it or any of the client mods included.
+- You are breaking [Discord ToS](https://discord.com/terms#software-in-discord%E2%80%99s-services) by using LiteCord, but no one has been banned from using it or any of the client mods included.
 
 ## Can I use this on anything other than ARM?
 - LiteCord should work normally under Windows, MacOS, and Linux as long as it has Electron support.  
@@ -69,7 +69,7 @@
 - We are using the official web app and wrapping it up in Electron. While you may think this is lame and done like thousands of times before, what makes us unique is that we actually strive for creating a customized experience. You can very easily load themes and mods with no installers/injectors. You can even make the client have transparency effects and follow the fluent design of Windows! At its core, it's just a simple web wrapper, however, we applied many patches to make this work well for you <3
 
 ## Why is macOS support lacking?
-- Due to me not owning any macOS device, I can't easily debug/test or do anything related to it. Of course, VMs and Hackintosh machines exist but from my experience, these are unreliable or very time-consuming to set up and maintain. While ArmCord "works" on macOS you may encounter weird issues or inconsistencies with other apps in terms of how they behave (for example macOS lack of tray).
+- Due to me not owning any macOS device, I can't easily debug/test or do anything related to it. Of course, VMs and Hackintosh machines exist but from my experience, these are unreliable or very time-consuming to set up and maintain. While LiteCord "works" on macOS you may encounter weird issues or inconsistencies with other apps in terms of how they behave (for example macOS lack of tray).
 
 ## Where can I find the source code?
 - The source code is on [GitHub](https://github.com/ByicTeam/LiteCord/).
@@ -84,4 +84,4 @@
 - (Pre v3.0.0) [custom-electron-titlebar](https://github.com/AlexTorresSk/custom-electron-titlebar)
 - [electron-builder](https://electron.build)
   
-Discord is trademark of Discord Inc. ArmCord is not affiliated with or endorsed by Discord Inc. 
+Discord is trademark of Discord Inc. LiteCord is not affiliated with or endorsed by Discord Inc. 
